@@ -13,5 +13,5 @@ import javax.ws.rs.PathParam;
 public interface ViaCEPService {
 
     @GET
-    ViaCEP getByCEP(@PathParam("CEP") String CEP);
+    Address getAddress(@PathParam("CEP") String CEP);
 }
