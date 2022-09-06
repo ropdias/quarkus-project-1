@@ -1,4 +1,4 @@
-package org.acme;
+package com.github.ropdias;
 
 import org.eclipse.microprofile.rest.client.inject.RestClient;
 import io.quarkus.runtime.QuarkusApplication;
@@ -7,9 +7,9 @@ import java.util.Scanner;
 
 import javax.inject.Inject;
 
-import org.acme.viacep.Address;
-import org.acme.viacep.AddressSerializer;
-import org.acme.viacep.ViaCEPService;
+import com.github.ropdias.viacep.Address;
+import com.github.ropdias.viacep.AddressSerializer;
+import com.github.ropdias.viacep.ViaCEPService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.module.SimpleModule;
 

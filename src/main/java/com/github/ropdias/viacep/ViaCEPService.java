@@ -1,4 +1,4 @@
-package org.acme.viacep;
+package com.github.ropdias.viacep;
 
 import org.eclipse.microprofile.rest.client.inject.RegisterRestClient;
 

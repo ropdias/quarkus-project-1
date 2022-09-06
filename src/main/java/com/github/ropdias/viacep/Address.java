@@ -1,4 +1,4 @@
-package org.acme.viacep;
+package com.github.ropdias.viacep;
 
 public class Address {
   private String cep;

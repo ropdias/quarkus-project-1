@@ -1,4 +1,4 @@
-package org.acme.viacep;
+package com.github.ropdias.viacep;
 
 import java.io.IOException;
 
