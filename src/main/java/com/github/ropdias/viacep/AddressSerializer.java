@@ -8,31 +8,31 @@ import com.fasterxml.jackson.databind.SerializerProvider;
 import com.fasterxml.jackson.databind.ser.std.StdSerializer;
 
 public class AddressSerializer extends StdSerializer<Address> {
-    
-  public AddressSerializer() {
-      this(null);
-  }
 
-  public AddressSerializer(Class<Address> t) {
-      super(t);
-  }
+    public AddressSerializer() {
+        this(null);
+    }
 
-  @Override
-  public void serialize(
-    Address value, JsonGenerator jgen, SerializerProvider provider) 
-    throws IOException, JsonProcessingException {
+    public AddressSerializer(Class<Address> t) {
+        super(t);
+    }
 
-      jgen.writeStartObject();
-      jgen.writeStringField("cep", value.getCep());
-      jgen.writeStringField("nomeDaRua", value.getLogradouro());
-      jgen.writeStringField("complemento", value.getComplemento());
-      jgen.writeStringField("bairro", value.getBairro());
-      jgen.writeStringField("localidade", value.getLocalidade());
-      jgen.writeStringField("uf", value.getUf());
-      jgen.writeStringField("ibge", value.getIbge());
-      jgen.writeStringField("gia", value.getGia());
-      jgen.writeStringField("ddd", value.getDdd());
-      jgen.writeStringField("siafi", value.getSiafi());
-      jgen.writeEndObject();
-  }
+    @Override
+    public void serialize(
+            Address value, JsonGenerator jgen, SerializerProvider provider)
+            throws IOException, JsonProcessingException {
+
+        jgen.writeStartObject();
+        jgen.writeStringField("cep", value.getCep());
+        jgen.writeStringField("nomeDaRua", value.getLogradouro());
+        jgen.writeStringField("complemento", value.getComplemento());
+        jgen.writeStringField("bairro", value.getBairro());
+        jgen.writeStringField("localidade", value.getLocalidade());
+        jgen.writeStringField("uf", value.getUf());
+        jgen.writeStringField("ibge", value.getIbge());
+        jgen.writeStringField("gia", value.getGia());
+        jgen.writeStringField("ddd", value.getDdd());
+        jgen.writeStringField("siafi", value.getSiafi());
+        jgen.writeEndObject();
+    }
 }

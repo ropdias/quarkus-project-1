@@ -1,17 +1,26 @@
 package com.github.ropdias.viacep;
 
-import org.eclipse.microprofile.rest.client.inject.RegisterRestClient;
-
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
+import javax.ws.rs.core.Response;
 
-// https://viacep.com.br/ws/01001000/json/
+import org.eclipse.microprofile.rest.client.inject.RegisterRestClient;
+
+import io.quarkus.rest.client.reactive.ClientExceptionMapper;
 
 @Path("/{CEP}/json")
-@RegisterRestClient(configKey="ViaCEP-api")
+@RegisterRestClient(configKey = "ViaCEP-api")
 public interface ViaCEPService {
 
     @GET
     Address getAddress(@PathParam("CEP") String CEP);
+
+    @ClientExceptionMapper
+    static RuntimeException toException(Response response) {
+        if (response.getStatus() != 200) {
+            throw new RuntimeException("The remote service responded with HTTP " + response.getStatus() + " !");
+        }
+        return null;
+    }
 }
